@@ -43,8 +43,7 @@ jobs:
         shell: bash
         run: |
           mkdir -p $REPO_NAME/out/Release/bin/artifact
-          cd $REPO_NAME/out/Release/bin
-          cp -R td/tdlib artifact/
+          cp -R td/tdlib/* $REPO_NAME/out/Release/bin/artifact
       - uses: actions/upload-artifact@master
         if: env.UPLOAD_ARTIFACT == 'true'
         name: Upload artifact
